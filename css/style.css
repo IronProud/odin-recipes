@@ -1,0 +1,277 @@
+/* ---------- Token ---------- */
+:root {
+  --pomodoro: #c4301c;
+  --basilico: #1e4b38;
+  --basilico-chiaro: #e3ede6;
+  --carta: #ffffff;
+  --inchiostro: #1f2a24;
+  --sfumato: #5b6a61;
+
+  --titoli: "Young Serif", Georgia, "Times New Roman", serif;
+  --testo: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2.5rem 1rem 4rem;
+  font-family: var(--testo);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--inchiostro);
+  /* tovaglia a quadretti */
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(196, 48, 28, 0.16) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(196, 48, 28, 0.16) 50%, transparent 50%);
+  background-size: 44px 44px;
+}
+
+/* La "carta" del menù */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: var(--carta);
+  border: 2px solid var(--basilico);
+  outline: 2px solid var(--basilico);
+  outline-offset: -10px;
+  box-shadow: 10px 10px 0 var(--pomodoro);
+}
+
+h1,
+h2 {
+  font-family: var(--titoli);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--basilico);
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+}
+
+p {
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+}
+
+a {
+  color: var(--pomodoro);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--pomodoro);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Home ---------- */
+.hero {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px dashed var(--basilico);
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--sfumato);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  height: 100%;
+  color: var(--inchiostro);
+  text-decoration: none;
+  background: var(--carta);
+  border: 2px solid var(--basilico);
+  box-shadow: 5px 5px 0 var(--basilico);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--pomodoro);
+  border-color: var(--pomodoro);
+}
+
+.menu img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 2px solid var(--basilico);
+}
+
+.menu span {
+  display: block;
+  padding: 1rem 1.1rem 1.15rem;
+  font-family: var(--titoli);
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+/* ---------- Pagine ricetta ---------- */
+.back {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back::before {
+  content: "\2190\00a0";
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.recipe-page main > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 26rem;
+  object-fit: cover;
+  margin: 0 0 2rem;
+  border: 2px solid var(--basilico);
+}
+
+.recipe-page h2 {
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--basilico);
+}
+
+.tempo {
+  display: inline-block;
+  margin: 0 0 2.25rem;
+  padding: 0.4rem 1rem;
+  font-family: var(--testo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pomodoro);
+  border-radius: 999px;
+}
+
+.columns {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 52rem) {
+  .columns {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+/* Ingredienti: come le righe di un menù */
+.ingredienti {
+  padding: 1.5rem;
+  background: var(--basilico-chiaro);
+  border: 2px solid var(--basilico);
+}
+
+.ingredienti ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ingredienti li {
+  padding: 0.55rem 0;
+  border-bottom: 2px dotted rgba(30, 75, 56, 0.45);
+}
+
+.ingredienti li:last-child {
+  border-bottom: 0;
+}
+
+/* Procedimento: è davvero una sequenza, quindi i numeri servono */
+.procedimento ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+.procedimento li {
+  position: relative;
+  min-height: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-left: 3.5rem;
+  counter-increment: passo;
+}
+
+.procedimento li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-family: var(--titoli);
+  font-size: 1.15rem;
+  color: #fff;
+  background: var(--basilico);
+  border-radius: 50%;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 34rem) {
+  body {
+    padding: 1rem 0.75rem 2.5rem;
+  }
+
+  main {
+    box-shadow: 6px 6px 0 var(--pomodoro);
+    outline-offset: -7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu a {
+    transition: none;
+  }
+}
+
+.recipe-page h1 {
+  margin-bottom: 1.75rem;
+}

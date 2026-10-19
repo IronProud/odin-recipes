@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiramisù</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700;1,6..12,400&family=Young+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
-    <a href="../index.html">Torna alla home</a>
+  <body class="recipe-page">
+    <main>
+    <a class="back" href="../index.html">Torna alla home</a>
 
     <h1>Tiramisù</h1>
     <img src="../images/tiramisu.jpg" alt="Una porzione di tiramisù al cacao" width="400" />
@@ -14,8 +19,10 @@
     <h2>Descrizione</h2>
     <p>Il dolce al cucchiaio più amato: savoiardi inzuppati nel caffè, crema al mascarpone e una spolverata di cacao amaro.</p>
 
-    <h3>Tempo di preparazione: 30 minuti più 4 ore di riposo</h3>
+    <h3 class="tempo">Tempo di preparazione: 30 minuti più 4 ore di riposo</h3>
 
+    <div class="columns">
+    <section class="ingredienti">
     <h2>Ingredienti</h2>
     <ul>
       <li>250 g di mascarpone</li>
@@ -26,6 +33,8 @@
       <li>Cacao amaro in polvere</li>
     </ul>
 
+    </section>
+    <section class="procedimento">
     <h2>Procedimento</h2>
     <ol>
       <li>Separa i tuorli dagli albumi.</li>
@@ -36,5 +45,8 @@
       <li>Metti in frigorifero per almeno 4 ore.</li>
       <li>Spolvera con il cacao prima di servire.</li>
     </ol>
+    </section>
+    </div>
+    </main>
   </body>
 </html>
